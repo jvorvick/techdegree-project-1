@@ -31,7 +31,7 @@ let quotes = [
     quote: '“Friendship ... is born at the moment when one man says to another "What! You too? I thought that no one but myself . . .”',
     source: '- C.S. Lewis',
     citation: 'The Four Loves',
-    yeah: '1960'
+    year: '1960'
   },
   {
     quote: '"In the practice of tolerance, one\'s enemy is the best teacher."',
@@ -52,8 +52,6 @@ function getRandomQuote() {
   return quotes[i];
 }
 
-console.log(getRandomQuote());
-
 
 /***
   Create the `printQuote` function to: 
@@ -67,6 +65,22 @@ console.log(getRandomQuote());
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+
+function printQuote () {
+  let i = getRandomQuote();
+  let HTML = '';
+  HTML += '<p class="quote">' + i.quote + '</p>';
+  HTML += '<p class="source">' + i.source;  
+    if (i.citation) {
+      HTML += '<span class ="citation">' + i.citation + '</span>';
+    }
+    if (i.year) {
+      HTML += '<span class = "year">' + i.year + '</span>';
+    }
+  HTML += '</p>';
+  console.log(HTML);
+}
+
 
 
 /***
