@@ -47,7 +47,12 @@ console.log(quotes);
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+function getRandomQuote() {
+  let i = Math.floor(Math.random() * quotes.length);
+  return quotes[i];
+}
 
+console.log(getRandomQuote());
 
 
 /***
@@ -62,8 +67,6 @@ console.log(quotes);
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-
-
 
 
 /***
