@@ -9,25 +9,40 @@ Quotes with citations, to be displayed in web app.
 let quotes = [
   {
     quote: 'Obstacles in the path are not obstacles, they ' + '<i>are</i>' + ' the path.',
-    source: '- Jane Catherine Lotter'
+    source: '- Jane Catherine Lotter',
+    profession: 'Freelance writer',
+    nationality: 'American',
+    lived: '1952 - 2013'
   },
   {
     quote: 'Have patience. Everything is difficult before it is easy.',
-    source: '- Saadi'
+    source: '- Saadi Shirazi',
+    profession: 'Poet',
+    nationality: 'Iranian',
+    lived: '1210 - 1291 or 1292'
   },
   {
     quote: 'Be who you are and say what you feel, because those who mind don\'t matter, and those who matter don\'t mind.',
-    source:  '- Bernard M. Baruch'
+    source:  '- Bernard M. Baruch',
+    profession: 'Businessman',
+    nationality: 'American',
+    lived: '1870 - 1965'
   },
   {
     quote: 'Friendship ... is born at the moment when one man says to another "What! You too? I thought that no one but myself . . .',
     source: '- C.S. Lewis',
     citation: 'The Four Loves',
-    year: '1960'
+    year: '1960',
+    profession: 'Novelist',
+    nationality: 'British',
+    lived: '1898 - 1963'
   },
   {
     quote: 'In the practice of tolerance, one\'s enemy is the best teacher.',
-    source: '- Dalai Lama'
+    source: '- Dalai Lama',
+    profession: 'Spritual Leader',
+    nationality: 'Tibetan',
+    lived: '1935 - present',
   }
 ]
 
@@ -51,15 +66,20 @@ function getRandomQuote() {
 function printQuote () {
   let i = getRandomQuote();
   let HTML = '';
+  
   HTML += '<p class="quote">' + i.quote + '</p>';
-  HTML += '<p class="source">' + i.source;  
-    if (i.citation) {
-      HTML += '<span class ="citation">' + i.citation + '</span>';
-    }
-    if (i.year) {
-      HTML += '<span class = "year">' + i.year + '</span>';
-    }
+  HTML += '<p class="source">' + i.source; 
+  if (i.citation) {
+    HTML += '<span class ="citation">' + i.citation + '</span>';
+  }
+  if (i.year) {
+    HTML += '<span class = "year">' + i.year + '</span>';
+  }
   HTML += '</p>';
+  HTML += '<p class="profession">' + i.profession + '</p>';
+  HTML += '<p class="nationality">' + i.nationality + '</p>';
+  HTML += '<p class="lived">' + i.lived + '</p>';
+  
   console.log(HTML);
   document.getElementById('quote-box').innerHTML = HTML;
   }
