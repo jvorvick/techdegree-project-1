@@ -16,25 +16,25 @@ project 1 - A Random Quote Generator
 ***/
 let quotes = [
   {
-    quote: '"Obstacles in the path are not obstacles, they ' + '<i>are</i>' + ' the path."',
+    quote: 'Obstacles in the path are not obstacles, they ' + '<i>are</i>' + ' the path.',
     source: '- Jane Catherine Lotter'
   },
   {
-    quote: '"Have patience. Everything is difficult before it is easy."',
+    quote: 'Have patience. Everything is difficult before it is easy.',
     source: '- Saadi'
   },
   {
-    quote: '“Be who you are and say what you feel, because those who mind don\'t matter, and those who matter don\'t mind.”',
+    quote: 'Be who you are and say what you feel, because those who mind don\'t matter, and those who matter don\'t mind.',
     source:  '- Bernard M. Baruch'
   },
   {
-    quote: '“Friendship ... is born at the moment when one man says to another "What! You too? I thought that no one but myself . . .”',
+    quote: 'Friendship ... is born at the moment when one man says to another "What! You too? I thought that no one but myself . . .',
     source: '- C.S. Lewis',
     citation: 'The Four Loves',
     year: '1960'
   },
   {
-    quote: '"In the practice of tolerance, one\'s enemy is the best teacher."',
+    quote: 'In the practice of tolerance, one\'s enemy is the best teacher.',
     source: '- Dalai Lama'
   }
 ]
