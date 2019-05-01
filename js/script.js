@@ -16,7 +16,7 @@ project 1 - A Random Quote Generator
 ***/
 let quotes = [
   {
-    quote: '"Obstacles in the path are not obstacles, they' + '<i>are</i>' + 'the path."',
+    quote: '"Obstacles in the path are not obstacles, they ' + '<i>are</i>' + ' the path."',
     source: '- Jane Catherine Lotter'
   },
   {
@@ -79,10 +79,11 @@ function printQuote () {
     }
   HTML += '</p>';
   console.log(HTML);
-}
+  document.getElementById('quote-box').innerHTML = HTML;
+  }
 
 
-
+  
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
