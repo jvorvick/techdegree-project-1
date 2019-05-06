@@ -2,10 +2,16 @@
 Random Quote Generator
 */
 
+/*
+Colors for background.
+*/
+
+let colors = ['#1f85de', '#8f21af', '#af2143', '#edc443', '#38bbb3', '#36b55c'];
 
 /*
 Quotes with citations, to be displayed in web app.
 */
+
 let quotes = [
   {
     quote: 'Obstacles in the path are not obstacles, they ' + '<i>are</i>' + ' the path.',
@@ -58,13 +64,23 @@ function getRandomQuote() {
 }
 
 /*
-  Function to call the `getRandomQuote` function.
+Function to choose and return a color at random.
+*/
+
+function getRandomColor () {
+  let randomColor = Math.floor(Math.random() * colors.length);
+  return colors[randomColor];
+}
+
+/*
+  Function to call the `getRandomQuote` and `getRandomColor` functions.
   Converts the object property values of the randomly chosen quote to HTML. 'Citation` and `year` properties are only included if applicable to the chosen quote.
-  Finally, the 'quote-box' div is applied to the new HTML.
+  Finally, the 'quote-box' div is applied to the new HTML, and the chosen color is applied to the body's background.
 */
 
 function printQuote () {
   let i = getRandomQuote();
+  let color = getRandomColor();
   let HTML = '';
   
   HTML += '<p class="quote">' + i.quote + '</p>';
@@ -81,7 +97,9 @@ function printQuote () {
   HTML += '<p class="lived">' + i.lived + '</p>';
   
   console.log(HTML);
+  
   document.getElementById('quote-box').innerHTML = HTML;
+  document.body.style.backgroundColor = color;
   }
 
 /*
