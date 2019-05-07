@@ -1,12 +1,8 @@
 /*
 Random Quote Generator
-*/
 
-/*
-Colors for background.
+A quote is shown and can be changed by clicking a button.
 */
-
-let colors = ['#1f85de', '#8f21af', '#af2143', '#edc443', '#38bbb3', '#36b55c'];
 
 /*
 Quotes with citations, to be displayed in web app.
@@ -48,11 +44,21 @@ let quotes = [
     source: '- Dalai Lama',
     profession: 'Spritual Leader',
     nationality: 'Tibetan',
-    lived: '1935 - present',
+    lived: '1935 - present'
   }
 ]
 
-console.log(quotes);
+/*
+Colors for background.
+*/
+
+let colors = ['#1f85de', '#8f21af', '#af2143', '#edc443', '#38bbb3', '#36b55c'];
+
+/*
+New quote and background color is shown every 20 seconds that the button is not pressed.
+*/
+
+window.setInterval(printQuote, 20000);
 
 /*
 Function to choose and return a quote at random.
@@ -95,8 +101,6 @@ function printQuote () {
   HTML += '<p class="profession">' + i.profession + '</p>';
   HTML += '<p class="nationality">' + i.nationality + '</p>';
   HTML += '<p class="lived">' + i.lived + '</p>';
-  
-  console.log(HTML);
   
   document.getElementById('quote-box').innerHTML = HTML;
   document.body.style.backgroundColor = color;
