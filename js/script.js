@@ -1,7 +1,7 @@
 /*
 Random Quote Generator
 
-A quote is shown and can be changed by clicking a button.
+A quote is shown and can be changed by clicking a button. The quote and background color will change automatically if the button is not pressed for 20 seconds, or if 20 seconds passes since the button was lasted pressed.
 */
 
 /*
@@ -55,10 +55,14 @@ Colors for background.
 let colors = ['#1f85de', '#8f21af', '#af2143', '#edc443', '#38bbb3', '#36b55c'];
 
 /*
-New quote and background color is shown every 20 seconds that the button is not pressed.
+New quote and background color is shown every 20 seconds when `timer` function is called.
 */
 
-window.setInterval(printQuote, 20000);
+let intervalID;
+
+function timer () {
+  intervalID = window.setInterval(printQuote, 20000);
+}
 
 /*
 Function to choose and return a quote at random.
@@ -81,7 +85,7 @@ function getRandomColor () {
 /*
   Function to call the `getRandomQuote` and `getRandomColor` functions.
   Converts the object property values of the randomly chosen quote to HTML. 'Citation` and `year` properties are only included if applicable to the chosen quote.
-  Finally, the 'quote-box' div is applied to the new HTML, and the chosen color is applied to the body's background.
+  Finally, the 'quote-box' div is applied to the new HTML, and the chosen color is applied to the body's background. The interval timer is reset.
 */
 
 function printQuote () {
@@ -104,10 +108,14 @@ function printQuote () {
   
   document.getElementById('quote-box').innerHTML = HTML;
   document.body.style.backgroundColor = color;
-  }
+  window.clearInterval(intervalID);
+  timer();
+}
 
 /*
+  The 20 second interval timer is started.
   The `printQuote` function is called when the app's "Show another quote" button is clicked.
 */
 
+timer();
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
