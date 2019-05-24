@@ -8,7 +8,7 @@ A quote is shown and can be changed by clicking a button. The quote and backgrou
 Quotes with citations, to be displayed in web app.
 */
 
-let quotes = [
+const quotes = [
   {
     quote: 'Obstacles in the path are not obstacles, they ' + '<i>are</i>' + ' the path.',
     source: '- Jane Catherine Lotter',
@@ -52,7 +52,7 @@ let quotes = [
 Colors for background.
 */
 
-let colors = ['#1f85de', '#8f21af', '#af2143', '#edc443', '#38bbb3', '#36b55c'];
+const colors = ['#1f85de', '#8f21af', '#af2143', '#edc443', '#38bbb3', '#36b55c'];
 
 /*
 New quote and background color is shown every 20 seconds when `timer` function is called.
@@ -60,16 +60,15 @@ New quote and background color is shown every 20 seconds when `timer` function i
 
 let intervalID;
 
-function timer () {
-  intervalID = window.setInterval(printQuote, 20000);
-}
+const timer = () => intervalID = window.setInterval(printQuote, 20000);
+
 
 /*
 Function to choose and return a quote at random.
 */
 
-function getRandomQuote() {
-  let i = Math.floor(Math.random() * quotes.length);
+const getRandomQuote = () => {
+  const i = Math.floor(Math.random() * quotes.length);
   return quotes[i];
 }
 
@@ -77,8 +76,8 @@ function getRandomQuote() {
 Function to choose and return a color at random.
 */
 
-function getRandomColor () {
-  let randomColor = Math.floor(Math.random() * colors.length);
+const getRandomColor = () => {
+  const randomColor = Math.floor(Math.random() * colors.length);
   return colors[randomColor];
 }
 
@@ -88,9 +87,9 @@ function getRandomColor () {
   Finally, the 'quote-box' div is applied to the new HTML, and the chosen color is applied to the body's background. The interval timer is reset.
 */
 
-function printQuote () {
-  let i = getRandomQuote();
-  let color = getRandomColor();
+const printQuote = () => {
+  const i = getRandomQuote();
+  const color = getRandomColor();
   let HTML = '';
   
   HTML += '<p class="quote">' + i.quote + '</p>';
